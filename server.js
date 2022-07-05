@@ -25,6 +25,6 @@ app.get("*", (req, res) => {
   // res.send("Backend!");
 });
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log("Backend is running....");
 });
