@@ -7,7 +7,7 @@ const usersRoute = require("./routes/usersRoute");
 
 
 const cors = require("cors");
-const port =  4000;
+
 
 mongoose.connect(
   "mongodb+srv://ali:common12@fyp.9o3c7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",  () => {
@@ -24,7 +24,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   // res.send("Backend!");
 });
-
-app.listen(3000, () => {
-  console.log("Backend is running....");
+const port=process.env.PORT||3000
+app.listen(port, () => {
+  console.log("Backend is running....",port);
 });
