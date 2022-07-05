@@ -21,10 +21,10 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.use("/users", usersRoute);
 require('./startup/production')(app)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-  // res.send("Backend!");
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+//   // res.send("Backend!");
+// });
 const port=process.env.PORT
 app.listen(port, () => {
   console.log("Backend is running....",port);
